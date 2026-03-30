@@ -1,0 +1,202 @@
+.product-filters-wrapper {
+  margin: 0.75rem 0;
+}
+
+.filters-header {
+  padding: 0.6rem 0.9rem;
+  border-bottom: 1px solid var(--border, #eef2f6);
+  margin-bottom: 0.6rem;
+}
+.filters-header h3 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--foreground, #0f172a);
+}
+
+.product-filters {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem; /* aumentar separación entre campos */
+  align-items: stretch;
+}
+
+.product-filters fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+.product-filters input,
+.product-filters select {
+  padding: 0.6rem 0.75rem;
+  border: 1px solid var(--border, #d9d9d9);
+  border-radius: var(--radius, 0.25rem);
+  font-size: 0.95rem;
+  color: var(--foreground, #242424);
+  background: #ffffff; /* fuerza fondo blanco para inputs/selects */
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Input wrappers (no icons) */
+.input-wrapper {
+  width: 100%;
+  margin-bottom: 0.45rem; /* separación extra entre cajitas */
+}
+.input-wrapper.small {
+  flex: 1;
+}
+.input-row {
+  display: flex;
+  gap: 0.6rem;
+  margin-bottom: 0.45rem;
+}
+
+.product-filters input::placeholder {
+  color: #9aa4ad;
+}
+
+.product-filters input[type="number"] {
+  width: 100%;
+}
+
+/* Normalize input sizes */
+.product-filters input,
+.product-filters select {
+  height: 42px;
+  padding: 0 0.75rem;
+  font-size: 0.95rem;
+  background: #ffffff; /* asegurar blanco también en la regla de normalización */
+}
+
+/* Improve placeholder contrast if needed */
+.product-filters input::placeholder,
+.product-filters select::placeholder {
+  color: #9aa4ad;
+}
+
+.product-filters button {
+  padding: 0.55rem 0.95rem;
+  border-radius: var(--radius, 0.25rem);
+  border: none;
+  background: #000;
+  color: var(--primary-white, #fff);
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.product-filters button[type="button"]:not(.btn-secondary) {
+  background: #333; /* secundario en gris oscuro para botones que NO sean .btn-secondary */
+}
+
+.product-filters .btn {
+  padding: 0.55rem 0.95rem;
+  border-radius: var(--radius, 0.25rem);
+  border: none;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition:
+    transform 120ms ease,
+    box-shadow 120ms ease,
+    opacity 120ms ease;
+}
+
+.product-filters .button-group {
+  display: flex;
+  gap: 0.6rem;
+  justify-content: space-between; /* limpiar a la izquierda, aplicar a la derecha */
+  margin-top: 0.5rem;
+  align-items: center;
+}
+
+.product-filters .btn:hover {
+  opacity: 0.95;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+}
+
+.product-filters .btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(36, 4, 78, 0.12);
+}
+
+.product-filters .btn-primary {
+  background: #000; /* botón primario en negro (contained) */
+  color: var(--primary-white, #fff);
+  border: none;
+}
+
+.product-filters .btn-secondary {
+  background: #ffffff; /* fondo blanco */
+  color: #333333; /* texto oscuro */
+  border: 1px solid #9ca3af; /* borde más marcado (outline) */
+  box-shadow: none;
+}
+
+/* Outline behavior: keep background white, remove shadow on hover/focus/active */
+.product-filters .btn-secondary:hover,
+.product-filters .btn-secondary:focus,
+.product-filters .btn-secondary:active {
+  background: #ffffff;
+  color: #111827;
+  box-shadow: none;
+  outline: none;
+}
+
+/* Variant utilities: contained / outlined */
+.product-filters .btn.contained {
+  background: #000;
+  color: #fff;
+  border: none;
+}
+.product-filters .btn.contained:hover {
+  filter: brightness(0.95);
+}
+
+.product-filters .btn.outlined {
+  background: transparent;
+  color: #333;
+  border: 1px solid #333;
+}
+.product-filters .btn.outlined:hover {
+  background: #333;
+  color: #fff;
+}
+
+.product-filters .btn .icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Grupo de botones: alinear a la derecha en desktop, apilar en móvil */
+  .product-filters .button-group,
+  .product-filters .button-group {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: space-between;
+    margin-top: 0.25rem;
+  }
+
+@media (max-width: 640px) {
+  .product-filters {
+    gap: 0.6rem;
+  }
+  .product-filters input[type="number"] {
+    width: 100%;
+  }
+  .product-filters .button-group {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .product-filters .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}

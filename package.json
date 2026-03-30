@@ -1,0 +1,54 @@
+{
+  "name": "dds-repo-base",
+  "private": true,
+  "version": "1.0.0",
+  "main": "index.js",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "start:backend": "npm start --workspace=backend",
+    "dev:backend": "npm run dev --workspace=backend",
+    "start:frontend": "npm start --workspace=frontend",
+    "start:dev": "concurrently \"npm run dev:backend\" \"npm run start:frontend\"",
+    "lint": "eslint .",
+    "format": "prettier . --write",
+    "test": "cross-env NODE_OPTIONS=--experimental-vm-modules jest",
+    "test:unit": "cross-env NODE_OPTIONS=--experimental-vm-modules jest --testPathPatterns=unit",
+    "test:integration": "cross-envNODE_OPTIONS=--experimental-vm-modules jest --testPathPatterns=integration"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "type": "module",
+  "devDependencies": {
+    "@eslint/js": "^9.36.0",
+    "concurrently": "^9.2.0",
+    "eslint": "^9.36.0",
+    "eslint-plugin-react": "^7.37.5",
+    "globals": "^16.4.0",
+    "jest": "^30.2.0",
+    "mongodb-memory-server": "^10.3.0",
+    "prettier": "3.6.2",
+    "supertest": "^7.1.4"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
+    "@hookform/resolvers": "^5.2.2",
+    "@mui/icons-material": "^7.3.5",
+    "@mui/material": "^7.3.5",
+    "axios": "^1.13.2",
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "framer-motion": "^12.23.24",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.18.3",
+    "nprogress": "^0.2.0",
+    "react-hook-form": "^7.66.0",
+    "react-icons": "^5.5.0",
+    "react-spinners": "^0.17.0",
+    "zod": "^4.1.12"
+  }
+}
